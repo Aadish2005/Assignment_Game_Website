@@ -1,0 +1,41 @@
+.library-page {
+  padding: 2rem 0;
+  min-height: calc(100vh - 60px);
+  background-color: #ffffff;
+}
+
+.library-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.no-games {
+  text-align: center;
+  padding: 3rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.no-games h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.no-games p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .library-page {
+    padding: 1rem;
+  }
+
+  .library-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+} 

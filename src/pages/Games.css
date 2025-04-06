@@ -1,0 +1,116 @@
+.games-page {
+  padding: 2rem 0;
+  min-height: calc(100vh - 70px);
+  background-color: #f8f9fa;
+}
+
+.filters-wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filters-wrapper h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #333333;
+}
+
+.games-content {
+  padding-left: 2rem;
+}
+
+.games-content h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #333333;
+}
+
+.games-count {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 1.5rem;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.no-results h3 {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.no-results p {
+  color: #666666;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #0066ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Pagination Styles */
+.pagination {
+  margin-bottom: 0;
+}
+
+.pagination .page-link {
+  background-color: #ffffff;
+  border-color: #dee2e6;
+  color: #333;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #0066ff;
+  border-color: #0066ff;
+  color: #fff;
+}
+
+.pagination .page-link:hover {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  color: #333;
+}
+
+.pagination .page-item.disabled .page-link {
+  background-color: #ffffff;
+  border-color: #dee2e6;
+  color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .filters-wrapper {
+    padding: 1rem;
+  }
+
+  .games-page {
+    padding: 1rem 0;
+  }
+} 

@@ -1,0 +1,15 @@
+.game-grid {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .game-grid .row {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+  
+  .game-grid .col {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+} 
