@@ -80,8 +80,8 @@
 }
 
 .sign-in-button {
-  background-color: #0066ff !important;
-  border-color: #0066ff !important;
+  background-color: red ;
+  border-color: red ;
   padding: 0.5rem 1.5rem;
   font-weight: 500;
 }
