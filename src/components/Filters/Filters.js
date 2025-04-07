@@ -20,7 +20,7 @@ const Filters = () => {
 
   return (
     <div className="filters-sidebar">
-      <h2 className="filters-title">Filters</h2>
+      
 
       <div className="filter-section">
         <h3>Categories</h3>
@@ -74,7 +74,7 @@ const Filters = () => {
       </div>
 
       <div className="filter-section">
-        <h3>Sort By</h3>
+        <h3>Sort By Popularity</h3>
         <Form.Select
           value={searchParams.get('ordering') || '-rating'}
           onChange={(e) => handleFilterChange('ordering', e.target.value)}
@@ -84,8 +84,10 @@ const Filters = () => {
           <option value="rating">Rating (Low to High)</option>
           <option value="-released">Release Date (Newest)</option>
           <option value="released">Release Date (Oldest)</option>
-          <option value="name">Name (A-Z)</option>
-          <option value="-name">Name (Z-A)</option>
+          {/* <option value="name">Name (A-Z)</option>
+          <option value="-name">Name (Z-A)</option> */}
+          <option value="name">Average Rating</option>
+          <option value="-name">None</option>
         </Form.Select>
       </div>
     </div>

@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import userService from '../../services/userService';
 
 const initialState = {
   user: null,
   isAuthenticated: false,
-  favorites: [],
+  favorites: userService.getFavorites(), // Initialize with stored favorites
 };
 
 const authSlice = createSlice({
@@ -20,12 +21,15 @@ const authSlice = createSlice({
     },
     setFavorites: (state, action) => {
       state.favorites = action.payload;
+      userService.saveFavorites(action.payload);
     },
     addToFavorites: (state, action) => {
-      state.favorites.push(action.payload);
+      const updatedFavorites = userService.addToFavorites(action.payload);
+      state.favorites = updatedFavorites;
     },
     removeFromFavorites: (state, action) => {
-      state.favorites = state.favorites.filter(id => id !== action.payload);
+      const updatedFavorites = userService.removeFromFavorites(action.payload);
+      state.favorites = updatedFavorites;
     },
   },
 });

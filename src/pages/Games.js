@@ -69,7 +69,7 @@ const Games = () => {
           <Col md={9}>
             <div className="games-content">
               <h1>Games</h1>
-              <SearchBar />
+              
               
               {!games?.results?.length ? (
                 <div className="no-results">

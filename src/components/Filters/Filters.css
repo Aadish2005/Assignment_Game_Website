@@ -1,7 +1,10 @@
 .filters-container {
   background: #ffffff;
+
+
   border-radius: 8px;
   padding: 1.5rem;
+
 }
 
 .filters-title {
@@ -13,6 +16,7 @@
 
 .filter-section {
   margin-bottom: 1.5rem;
+ 
 }
 
 .filter-section h3 {
@@ -22,7 +26,6 @@
   font-weight: 500;
 }
 
-/* Select and Input styles */
 .filter-select,
 .filter-input {
   width: 100%;
@@ -45,7 +48,7 @@
   color: #333;
 }
 
-/* Range slider styles */
+
 .filter-range {
   width: 100%;
   margin: 0.5rem 0;
@@ -68,21 +71,25 @@
   margin-top: 0.5rem;
 }
 
-/* Placeholder color */
+
 .filter-input::placeholder {
   color: #adb5bd;
 }
 
-/* Hover states */
+
 .filter-select:hover,
 .filter-input:hover {
   border-color: #ced4da;
   background: #ffffff;
 }
 
-/* Mobile styles */
+
 @media (max-width: 991px) {
   .filters-sidebar {
     margin-bottom: 1rem;
   }
-} 
+} .gamepage{
+  padding: 2rem 0;
+  min-height: calc(100vh - 60px);
+  background-color: blueviolet;
+}

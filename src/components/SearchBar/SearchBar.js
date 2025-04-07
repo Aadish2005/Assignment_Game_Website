@@ -1,13 +1,13 @@
+
 import debounce from 'lodash/debounce';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Form, InputGroup } from 'react-bootstrap';
-import { FaSearch } from 'react-icons/fa';
+import { Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './SearchBar.css';
 
+
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [isSearching, setIsSearching] = useState(false);
   const navigate = useNavigate();
 
   // Debounce the search navigation to prevent too many updates
@@ -15,45 +15,40 @@ const SearchBar = () => {
     debounce((term) => {
       if (term.length >= 2) {
         navigate(`/games?search=${encodeURIComponent(term)}`);
-        setIsSearching(false);
+      } else if (term.length === 0) {
+        // Clear search when input is empty
+        navigate('/games');
       }
-    }, 500),
+    }, 300),
     [navigate]
   );
 
   useEffect(() => {
-    if (searchTerm) {
-      setIsSearching(true);
-      debouncedSearch(searchTerm);
-    }
+    debouncedSearch(searchTerm);
     return () => debouncedSearch.cancel();
   }, [searchTerm, debouncedSearch]);
 
   const handleSearchChange = (e) => {
-    const value = e.target.value;
-    setSearchTerm(value);
+    setSearchTerm(e.target.value);
   };
 
   return (
-    <div className="search-bar-container">
-      <InputGroup>
-        <InputGroup.Text className="search-icon">
-          <FaSearch />
-        </InputGroup.Text>
+    <div className="search-container">
+      <Form className="search-form">
         <Form.Control
-          type="text"
-          placeholder="Search games..."
+          type="search"
+          placeholder="Search Games..."
+          className="search-input"
           value={searchTerm}
           onChange={handleSearchChange}
-          className="search-input"
-          aria-label="Search games"
+          aria-label="Search"
+          autoFocus
         />
-      </InputGroup>
-      {isSearching && searchTerm.length >= 2 && (
-        <div className="search-indicator">Searching...</div>
-      )}
+      </Form>
     </div>
   );
 };
 
-export default SearchBar; 
+export default SearchBar;
+
+
